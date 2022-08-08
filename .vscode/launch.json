@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "flutter_bloc",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/cubit/environment/main.dart",
+        },
+        {
+            "name": "InheritedWidget",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/inherited_widget/environment/main.dart",
+        },
+        {
+            "name": "MobX",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/mobx/environment/main.dart",
+        },
+        {
+            "name": "Provider",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/provider/environment/main.dart",
+        },
+        {
+            "name": "Redux",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/redux/environment/main.dart",
+        },
+        {
+            "name": "Riverpod",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/riverpod/environment/main.dart",
+        }
+    ]
+}
