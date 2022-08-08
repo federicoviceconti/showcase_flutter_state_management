@@ -6,40 +6,27 @@ import 'package:showcase_flutter_state_management/inherited_widget/inherited_hom
 import 'shopping_service_mock.dart';
 
 void main() {
-  InheritedHome? inheritedHome;
+  _InheritedHomeMockWrapperState? state;
 
   setUp(() {
-    final state = _InheritedHomeMockWrapperState();
-    state.overrideDataManager(HomeDataManager(ShoppingServiceMock()));
-
-    inheritedHome = InheritedHome(
-      data: state,
-      child: MaterialApp(
-        home: Container(),
-      ),
-    );
+    state = _InheritedHomeMockWrapperState();
+    state!.overrideDataManager(HomeDataManager(ShoppingServiceMock()));
   });
 
   tearDown(() {
-    inheritedHome = null;
+    state = null;
   });
 
-  testWidgets('Products should not be empty', (WidgetTester tester) async {
-    await tester.pumpWidget(inheritedHome!);
-    await tester.pumpAndSettle();
-
-    await inheritedHome!.data.retrieveProducts();
-    expect(inheritedHome!.data.model.products, isNotEmpty);
+  test('Products should not be empty', () async {
+    await state!.retrieveProducts();
+    expect(state!.model.products, isNotEmpty);
   });
 
-  testWidgets('Product favorite is set to true', (WidgetTester tester) async {
-    await tester.pumpWidget(inheritedHome!);
-    await tester.pumpAndSettle();
+  test('Product favorite is set to true', () async {
+    await state!.retrieveProducts();
+    state!.onTapFavorite(state!.model.products!.first);
 
-    await inheritedHome!.data.retrieveProducts();
-    inheritedHome!.data.onTapFavorite(inheritedHome!.data.model.products!.first);
-
-    expect(inheritedHome!.data.model.products!.first.favorite, isTrue);
+    expect(state!.model.products!.first.favorite, isTrue);
   });
 }
 
