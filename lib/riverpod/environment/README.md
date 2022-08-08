@@ -64,10 +64,10 @@ See [ProviderRef<State>](https://pub.dev/documentation/riverpod/latest/riverpod/
 - watch method: obtain a value and attach a listener for changes. **It's better to use it**, to make
   the app reactive.
 
-Read this section for the read/watch
-methods: https://riverpod.dev/docs/concepts/reading#using-refread-to-obtain-the-state-of-a-provider.
+This section explains which method you should
+use: https://riverpod.dev/docs/concepts/reading#using-refread-to-obtain-the-state-of-a-provider.
 
-*It's safe to use read method inside provider creation*
+*Best practice for using read during Provider creation*
 
 Riverpod best practice said to use the following approach:
 
