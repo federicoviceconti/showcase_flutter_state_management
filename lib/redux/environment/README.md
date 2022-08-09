@@ -40,7 +40,7 @@ to [dispatch](https://pub.dev/documentation/redux/latest/redux/Store/dispatch.ht
 
 When we use the `dispatch`, the action will be applied to middleware and reducers.
 
-*Reducer*
+#### Reducer
 
 `Reducer<State>` defines the state change. Takes the previous state and an action parameter.
 
@@ -78,6 +78,7 @@ decoupled and easily tested.**
 `combineReducers<State>` [function](https://pub.dev/documentation/redux/latest/redux/combineReducers.html)
 
 ```dart
+
 final loadingReducer = combineReducers<bool>([
   TypedReducer<bool, TodosLoadedAction>(_setLoaded),
   TypedReducer<bool, TodosNotLoadedAction>(_setNotLoaded),
@@ -90,4 +91,37 @@ bool _setLoaded(bool state, action) {
 bool _setNotLoaded(bool state, action) {
   return false;
 }
+```
+
+#### Middleware
+
+It's used to intercepts action and transform them before they reach the reducer. An usage is for
+performing API requests.
+
+They must be specified on the `Store<State>` Widget:
+
+```dart
+
+final store = Store<AppState>(
+  searchReducer,
+  initialState: AppStateInitial(),
+  middleware: [
+    AsyncMiddlewareExample(ApiExample()),
+  ],
+);
+```
+
+Also, they can be used with `TypedMiddleware<State, Action>` class. It allows to make it type safe
+and reduces boilerplate:
+
+```dart
+
+saveItemsMiddleware(Store<AppState> store, dynamic action, NextDispatcher next) {
+  next(action);
+  _saveItems(store.state.items);
+}
+
+final List<Middleware<AppState>> middleware = [
+  TypedMiddleware<AppState, AddTodoAction>(saveItemsMiddleware),
+];
 ```
