@@ -13,7 +13,8 @@ class InheritedHome extends InheritedWidget {
   const InheritedHome({
     Key? key,
     required super.child,
-    this.model = const Model(products: []), required this.data,
+    this.model = const Model(products: []),
+    required this.data,
   }) : super(key: key);
 
   @override

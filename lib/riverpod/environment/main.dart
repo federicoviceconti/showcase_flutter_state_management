@@ -11,7 +11,8 @@ import 'package:showcase_flutter_state_management/riverpod/home_notifier.dart';
 import '../home_state.dart';
 import '../home_view.dart';
 
-final shoppingServiceProvider = Provider<ShoppingService>((ref) => ShoppingServiceImpl());
+final shoppingServiceProvider =
+    Provider<ShoppingService>((ref) => ShoppingServiceImpl());
 final dataManagerProvider = Provider(
   (ref) => HomeDataManager.fromProvider(ref.read),
 );

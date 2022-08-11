@@ -25,9 +25,7 @@ void main() {
     );
   });
 
-  tearDown(() {
-
-  });
+  tearDown(() {});
 
   test('Products should not be empty', () async {
     await store?.dispatch(FetchAction());

@@ -33,11 +33,11 @@ class ShoppingListItems extends StatelessWidget {
   }
 
   int _getAxisCount(BuildContext context) {
-    if(MediaQuery.of(context).size.width < 560) {
+    if (MediaQuery.of(context).size.width < 560) {
       return 1;
-    } else if(MediaQuery.of(context).size.width < 825) {
+    } else if (MediaQuery.of(context).size.width < 825) {
       return 2;
-    } else if(MediaQuery.of(context).size.width < 1100) {
+    } else if (MediaQuery.of(context).size.width < 1100) {
       return 3;
     }
 

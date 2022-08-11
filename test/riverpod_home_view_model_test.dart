@@ -6,11 +6,9 @@ import 'shopping_service_mock.dart';
 
 void main() {
   test('Product favorite is set to true', () async {
-    final container = ProviderContainer(
-        overrides: [
-          shoppingServiceProvider.overrideWithValue(ShoppingServiceMock())
-        ]
-    );
+    final container = ProviderContainer(overrides: [
+      shoppingServiceProvider.overrideWithValue(ShoppingServiceMock())
+    ]);
     addTearDown(container.dispose);
 
     final notifier = container.read(homeProvider.notifier);
@@ -24,11 +22,9 @@ void main() {
   });
 
   test('Products should not be empty', () async {
-    final container = ProviderContainer(
-        overrides: [
-          shoppingServiceProvider.overrideWithValue(ShoppingServiceMock())
-        ]
-    );
+    final container = ProviderContainer(overrides: [
+      shoppingServiceProvider.overrideWithValue(ShoppingServiceMock())
+    ]);
     addTearDown(container.dispose);
 
     final notifier = container.read(homeProvider.notifier);

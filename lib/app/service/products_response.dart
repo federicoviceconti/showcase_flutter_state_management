@@ -42,7 +42,9 @@ class Product {
   Product.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
-    price = json['price'] is int? ? (json['price'] as int?)?.toDouble() : json['price'];
+    price = json['price'] is int?
+        ? (json['price'] as int?)?.toDouble()
+        : json['price'];
     description = json['description'];
     category = json['category'];
     image = json['image'];
@@ -74,7 +76,9 @@ class Rating {
   });
 
   Rating.fromJson(Map<String, dynamic> json) {
-    rate = json['rate'] is int? ? (json['price'] as int?)?.toDouble() : json['price'];
+    rate = json['rate'] is int?
+        ? (json['price'] as int?)?.toDouble()
+        : json['price'];
     count = json['count'];
   }
 
