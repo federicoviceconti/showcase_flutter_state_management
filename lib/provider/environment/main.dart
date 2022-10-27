@@ -34,7 +34,7 @@ class ShoppingApp extends StatelessWidget {
           ChangeNotifierProxyProvider<HomeDataManager, HomeViewModel>(
             create: (context) => HomeViewModel(context.read<HomeDataManager>()),
             update: (_, dm, __) => HomeViewModel(dm),
-          )
+          ),
         ],
         child: const HomeView(),
       ),
