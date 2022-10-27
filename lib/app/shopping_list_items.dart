@@ -18,7 +18,7 @@ class ShoppingListItems extends StatelessWidget {
       shrinkWrap: true,
       crossAxisCount: _getAxisCount(context),
       children: List.generate(
-        10,
+        products.length,
         (index) {
           return Padding(
             padding: const EdgeInsets.all(16.0),
