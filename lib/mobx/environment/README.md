@@ -23,7 +23,7 @@ The main concepts about MobX are:
   - On the codegen library is used the annotation on the `@action` method
 - derivations: 
   - computed: manipulate store properties to returns a value when they change
-    - On the codegen library is used the annotation on the `@action` property
+    - On the codegen library is used the annotation on the `@computed` property
   - reactions `autorun`, `when`, `reaction`: track an observable and run when the state change
 
 Following an example of usage for a counter app:
